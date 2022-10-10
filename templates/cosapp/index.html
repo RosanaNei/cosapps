@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cosapp</title>
-  </head>
-  <body style="background-color: red">
-    <div class="saludos">
-      <h1 style="color: black">El dia de hoy es {{hoy}}</h1>
-      <h2>{{saludos.0}} gente!</h2>
-      <h2>{{saludos.1}} people!</h2>
-      <h2>{{saludos.2}} pessoas!</h2>
-      <h2>{{saludos.3}} gentuza!</h2>
-      <h3>{{idioma_saludos.es}} gente!</h3>
-      <h3>{{idioma_saludos.en}} people!</h3>
-      <h3>{{idioma_saludos.br}} pessoas!</h3>
+{% extends "base.html" %} {% block titulo %} Inicia el coso! {%endblock titulo%}
+{% block contenido %}
+<h1 style="color: blue">HOLA GENTE! hoye es {{ hoy }}</h1>
+<h2>{{ saludos.0 }} gente!</h2>
+<h2>{{ saludos.1 }} people!</h2>
+<h2>{{ saludos.2 }} pessoas!</h2>
+<h2>{{ saludos.3 }} gentuza!</h2>
+<h3>{{ idioma_saludos.es }} gente!</h3>
+<h3>{{ idioma_saludos.en }} people!</h3>
+<h3>{{ idioma_saludos.br }} pessoas!</h3>
+{% endblock contenido %}
+<ul class="list-group list-group-numbered align-items-center">
+  {% for lenguaje in lenguajes %}
+  <li style="color: {% cycle 'blue' 'red' %}">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Lenguaje</div>
+      {{lenguaje | upper}}
     </div>
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li>
-        <a href="{% url 'index' %}" class="nav-link px-2 link-secondary"
-          >Inicio</a
-        >
-      </li>
-      <li>
-        <a href="{% url 'segundo' %}" class="nav-link px-2 link-dark"
-          >Lenguajes</a
-        >
-      </li>
-    </ul>
-  </body>
-</html>
+  </li>
+  {% endfor %}
+</ul>

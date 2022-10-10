@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'cosapp/index.html', {'hoy': datetime.now, "saludos": saludos, "idioma_saludos": idioma_saludo})
 
 def segundo(request):
-    return render(request, 'cosapp/segundo.html')
+    idiomas = ['English', 'Español', 'Portugues', 'Alemán']
+    return render(request, 'cosapp/segundo.html', {"lenguajes": idiomas})
 
 

@@ -1,12 +1,32 @@
+{% extends "base.html" %} 
+
+{%block h1%} <h2>soy segundo html</h2> {%endblock h1%}
+  
+
+  {% block contenido %}
+  <ul class="list-group list-group-numbered align-items-center">
+    {% for lenguaje in lenguajes %}
+    <li style="color: {% cycle 'blue' 'red' %}">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Lenguaje</div>
+        {{lenguaje | upper}}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% endblock contenido %}
+</body>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body style='background-color:darkcyan'>
-    <h2>soy segundo html</h2>    
-</body>
+  </head>
+  <body style="background-color: darkcyan">
+    <h2>soy segundo html</h2>
+  </body>
 </html>

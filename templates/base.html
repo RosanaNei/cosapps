@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block titulo %} Esto es coso {% endblock titulo %}</title>
+  </head>
+  <body style="background-color: rgb(197, 182, 42)">
+    {%block h1%} {%endblock h1%}
+    <div class="sidebar">
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li>
+          <a href="{% url 'index' %}" class="nav-link px-2 link-secondary"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="{% url 'segundo' %}" class="nav-link px-2 link-dark"
+            >Lenguajes</a
+          >
+        </li>
+      </ul>
+    </div>
+    <main>{% block contenido %} {% endblock contenido %}</main>
+  </body>
+</html>
