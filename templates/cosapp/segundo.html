@@ -1,9 +1,14 @@
 {% extends "base.html" %} 
 
+{%block titulo%} segundo coso {%endblock titulo%}
+
 {%block h1%} <h2>soy segundo html</h2> {%endblock h1%}
   
 
   {% block contenido %}
+  {% load static %}
+  <img src="{% static '/cosapp/img/DVO_photo-750x500.png' %}"
+
   <ul class="list-group list-group-numbered align-items-center">
     {% for lenguaje in lenguajes %}
     <li style="color: {% cycle 'blue' 'red' %}">
@@ -14,6 +19,17 @@
     </li>
     {% endfor %}
   </ul>
+  {% autoescape off %}
+  <h1 style='color: red'>{{ heading }}</h1>
+  {% endautoescape %}
+  <ul>
+  {% for atleta in atletas %}
+  <li>{{ atleta }}</li>
+  {% empty %}
+  <li>Lo sentimos, no hay atletas en esta lista.</li>
+  {% endfor %}
+  </ul>
+    
 
   {% endblock contenido %}
 </body>

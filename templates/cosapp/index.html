@@ -1,6 +1,13 @@
 {% extends "base.html" %} {% block titulo %} Inicia el coso! {%endblock titulo%}
 {% block contenido %}
-<h1 style="color: blue">HOLA GENTE! hoye es {{ hoy }}</h1>
+<h1 style="color: blue">HOLA GENTE! hoy es {{ hoy }}</h1>
+
+{% if greeting == 1 %}
+<h1 style="color: red">Hello</h1>
+{% else %}
+<h1 style="color: cyan">Bye</h1>
+{% endif %}
+<h1>Hello {{ firstname|upper }}, how are you?</h1>
 <h2>{{ saludos.0 }} gente!</h2>
 <h2>{{ saludos.1 }} people!</h2>
 <h2>{{ saludos.2 }} pessoas!</h2>
