@@ -16,4 +16,5 @@ def segundo(request):
     lista_atletas= ['juan',  'pepe', 'coso']
     return render(request, 'cosapp/segundo.html', {"lenguajes": idiomas, 'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!', 'atletas': lista_atletas})
 
-
+def carta(request):
+    return render(request, 'cosapp/carta.html')
