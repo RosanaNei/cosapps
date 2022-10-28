@@ -1,7 +1,9 @@
+from cmath import rect
 from django.shortcuts import render
 from datetime import datetime
 from django.http import HttpResponse
-
+from cosapp.forms import ContactoForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -18,3 +20,13 @@ def segundo(request):
 
 def carta(request):
     return render(request, 'cosapp/carta.html')
+
+def contacto(request):
+    if request.method == 'POST':
+        # Esta es la instacia que lleva los datos cargados
+        contacto_form = ContactoForm(request.POST)
+        #Valida y procesa los datos
+    else:
+        #Acá el formulario vacio con los datos de contacto
+        contacto_form = ContactoForm
+    return render(request, 'cosapp/contacto.html', {'contacto_form': contacto_form})
